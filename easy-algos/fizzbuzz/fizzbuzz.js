@@ -33,24 +33,23 @@ Loop over the array and determine:
 3. Is the array[i] % 3 === 0 && number % 5 === 0 ? replace num with "FizzBuzz".
 */
 
-function fizzbuzz(int) {
-  arr = [];
-
-  for (let i = 0; i < int; i+1) {
-    arr.splice(0, 0, int--);
-  }
-
-  for (let j = 0; j < arr.length; j++) {
-    if (arr[j] % 3 === 0 && arr[j] % 5 === 0) {
-      arr.splice(arr[j]-1, 1, "FizzBuzz");
-    } else if (arr[j] % 3 === 0) {
-      arr.splice(arr[j]-1, 1, "Fizz");
-    } else if (arr[j] % 5 === 0) {
-      arr.splice(arr[j]-1, 1, "Buzz");
+function fizzbuzz(num) {
+  for(i = 1; i <= num; i++){
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+      console.log("Fizz");
+    } else if (i % 5 === 0) {
+      console.log("Buzz");
+    }else {
+      console.log(i)
     }
   }
-
-  console.log(arr);
 }
 
 fizzbuzz(16);
+
+/* 
+Link to algo:
+https://leetcode.com/problems/fizz-buzz/
+*/
