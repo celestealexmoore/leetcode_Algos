@@ -42,11 +42,11 @@ function fizzbuzz(int) {
 
   for (let j = 0; j < arr.length; j++) {
     if (arr[j] % 3 === 0 && arr[j] % 5 === 0) {
-      arr.splice(arr[j], 0, "FizzBuzz");
+      arr.splice(arr[j]-1, 1, "FizzBuzz");
     } else if (arr[j] % 3 === 0) {
-      arr.splice(arr[j], 1, "Fizz");
+      arr.splice(arr[j]-1, 1, "Fizz");
     } else if (arr[j] % 5 === 0) {
-      arr.splice(arr[j], 1, "Buzz");
+      arr.splice(arr[j]-1, 1, "Buzz");
     }
   }
 
