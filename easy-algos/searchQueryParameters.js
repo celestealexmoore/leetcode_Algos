@@ -7,26 +7,28 @@ function getQueryParams(url) {
   let queryArray = url.split("?");
   let queries = queryArray[1].split("&");
   let key, value;
-  let dupliKey = [];
+
   let result = {};
 
   for (let i = 0; i < queries.length; i++) {
     key = queries[i].split("=")[0];
     value = queries[i].split("=")[1];
-
+    let dupliKey = [];
     if (key in result) {
       dupliKey.push(value);
-      console.log(dupliKey);
-      //If you've already created an array, you are now pushing into dupliKey, an array
-      //You need to either check if this is an array, and only push the content of the array
-      //or you can push the latest value into current array
-      result[key] = dupliKey;
+      if (typeof result[key] === "string") {
+        result[key] = [result[key], value];
+      } else {
+        let results = result[key];
+        result[key] = [...results, value];
+      }
     } else {
       result[key] = value;
     }
   }
   return result;
 }
+
 getQueryParams(
   "https://www.iamdoingmybest.com/?please=iBeg&please=PLEASE&please=test&dont=doNot&count=thinkI&meOut=cantDoThis"
 );
