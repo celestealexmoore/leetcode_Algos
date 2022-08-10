@@ -30,12 +30,12 @@ function getQueryParams(url) {
 }
 
 getQueryParams(
-  "https://www.iamdoingmybest.com/?please=iBeg&please=PLEASE&please=test&dont=doNot&count=thinkI&meOut=cantDoThis"
+  "https://www.iamdoingmybest.com/?please=iBeg&please=PLEASE&please=prettyPlease&dont=doNot&count=thinkI&meOut=cantDoThis"
 );
 
 /* 
 Test Cases:
-'https://www.iamdoingmybest.com/?please=please&dont=dont&count=count&meOut=meOut'
+'https://www.iamdoingmybest.com/?please=iBeg&please=PLEASE&please=prettyPlease&dont=doNot&count=thinkI&meOut=cantDoThis'
 'https://www.example.com/widgets?color=blue'
 'https://www.domain.com/page?key1=value1&key2=value2'
 */
